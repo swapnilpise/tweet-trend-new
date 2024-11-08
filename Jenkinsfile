@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        MAVEN_OPTS = "-Xms512m -Xmx2048m -XX:MaxPermSize=512m"
+        PATH = "/opt/apache-maven-3.9.9/bin:$PATH" // Adjust this path as necessary
     }
 
     stages {
