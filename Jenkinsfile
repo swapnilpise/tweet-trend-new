@@ -11,7 +11,7 @@ environment {
     stages {
         stage("build"){
             steps {
-                sh 'mvn clean deploy -X'
+                sh 'mvn clean deploy -Dmaven.surefire.debug -Xms512m -Xmx2048m'
             }
         }
     }
