@@ -6,13 +6,13 @@ pipeline {
     }
 
     environment {
-        PATH = "/opt/apache-maven-3.9.9/bin:$PATH" // Adjust this path as necessary
+        MAVEN_OPTS = "-Xmx2048m -Xms512m"
     }
 
     stages {
         stage("Build") {
             steps {
-                sh 'mvn clean deploy'
+                sh 'mvn clean deploy -DargLine="-Xmx2048m"'
             }
         }
     }
