@@ -5,16 +5,14 @@ pipeline {
         }
     }
 
-    environment {
-        MAVEN_OPTS = "-Xmx2048m -Xms512m"
-    }
-
+environment {
+    PATH = "/usr/share/maven-3.8.7/bin:$PATH"
+}
     stages {
-        stage("Build") {
+        stage("build"){
             steps {
-                sh 'mvn clean deploy -DargLine="-Xmx2048m"'
+                sh 'mvn clean deploy'
             }
         }
     }
 }
-
