@@ -6,12 +6,12 @@ pipeline {
     }
 
 environment {
-    PATH = "/usr/share/maven-3.8.7/bin:$PATH"
+    PATH = "/opt/apache-maven-3.9.9/bin:$PATH"
 }
     stages {
         stage("build"){
             steps {
-                sh 'mvn clean deploy'
+                sh 'mvn'
             }
         }
     }
