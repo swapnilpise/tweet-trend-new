@@ -5,14 +5,16 @@ pipeline {
         }
     }
 
-environment {
-    PATH = "/opt/apache-maven-3.9.9/bin:$PATH"
-}
+    environment {
+        MAVEN_OPTS = "-Xms512m -Xmx2048m -XX:MaxPermSize=512m"
+    }
+
     stages {
-        stage("build"){
+        stage("Build") {
             steps {
-                sh 'mvn clean deploy -Dmaven.surefire.debug -Xms512m -Xmx2048m'
+                sh 'mvn clean deploy'
             }
         }
     }
 }
+
